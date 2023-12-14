@@ -11,6 +11,7 @@ urlpatterns = [
     path('paySearch/', views.paySearch, name='paySearch'),
     path('redeem/', views.redeem, name='redeem'),
     path('award/', views.awardPoints, name='award'),
+    path('new-user',views.newUser,name='new-user'),
 ]
 
 admin.site.site_header = 'REMMI SPA LOYALTY POINTS Admin'

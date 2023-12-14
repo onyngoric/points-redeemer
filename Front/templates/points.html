@@ -25,10 +25,7 @@
                   <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'admin:index' %}">Add New Customer</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+                  <a class="nav-link" href="{% url 'new-user' %}">Add New Customer</a>
                 </li>
                 
               </ul>
@@ -103,19 +100,15 @@
                         </div>
                       </div>
                     </td>
-                    {% for pay in customer.payments_set.all %}
                     <td>
-                      <p class="fw-normal mb-1">{{ pay.amount }}</p>                      
-                    </td>
-                    {% endfor %}
-                    {% for point in customer.points_set.all %}
-                    <td>
-                      <span class="badge badge-success rounded-pill d-inline">{{ point.redeemed }}</span>
+                      <p class="fw-normal mb-1">{{ customer.amount }}</p>                      
                     </td>
                     <td>
-                      <span class="badge badge-success rounded-pill d-inline">{{ point.points }}</span>
+                      <span class="badge badge-success rounded-pill d-inline">{{ customer.redeemed }}</span>
                     </td>
-                    {% endfor %}
+                    <td>
+                      <span class="badge badge-success rounded-pill d-inline">{{ customer.points }}</span>
+                    </td>
                     <!--Allow user enter points to be redeemed-->
                     <form action="{% url 'redeem' %}" method="POST">
                       {% csrf_token %}
