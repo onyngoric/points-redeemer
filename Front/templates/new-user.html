@@ -12,7 +12,7 @@
     <!--navbar-->
     <nav class="navbar fixed-top" style="background-color: rgb(44, 77, 226); color:orange;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="color:rgb(255, 255, 255);">
+        <a class="navbar-brand" href="{% url 'home' %}" style="color:rgb(255, 255, 255);">
           <img
             src="{% static 'Front/img/logo.png' %}"
             class="me-2"
@@ -63,7 +63,8 @@
             <!--Success-->
             <div class="row" style="padding-top: 70px;">
                 <div class="col-md-4"></div>
-                <div class="col-md-4">                 
+                <div class="col-md-4"> 
+                  <P class="text-center">Add New Customer</P>                
                   <form method="POST" action="{% url 'new-user' %}">
                     {% csrf_token %}
                     <!-- Username -->
